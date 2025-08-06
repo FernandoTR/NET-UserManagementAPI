@@ -40,41 +40,42 @@ Esta API permite **crear**, **consultar**, **actualizar** y **eliminar** registr
   "department": "TI"
 }
 ```
+
+
 ## 📁 Estructura del Proyecto
+```
 UserManagementAPI/
 │
 ├── Controllers/
-│   └── UsersController.cs         // Endpoints REST de usuario
+│   └── UsersController.cs                # Endpoints REST para usuarios
 │
 ├── Middleware/
-│   ├── ErrorHandlingMiddleware.cs         // Manejo global de errores
-│   ├── RequestResponseLoggingMiddleware.cs // Logging de peticiones y respuestas
-│   └── TokenAuthenticationMiddleware.cs    // Autenticación por token
+│   ├── ErrorHandlingMiddleware.cs        # Manejo global de errores
+│   ├── RequestResponseLoggingMiddleware.cs # Logging de solicitudes y respuestas
+│   └── TokenAuthenticationMiddleware.cs  # Autenticación por token
 │
 ├── Models/
-│   └── User.cs                    // Modelo de datos con validaciones
+│   └── User.cs                          # Modelo de usuario con validaciones
 │
-├── appsettings.json              // Configuración de token
-└── Program.cs                    // Configuración del pipeline
+├── appsettings.json                     # Configuración de autenticación y otros parámetros
+└── Program.cs                           # Configuración del pipeline y servicios
+```
 
 
 ## 🧱 Middleware Implementado
 1. 🔐 TokenAuthenticationMiddleware
-Extrae y valida el token desde el header Authorization
-
-Retorna 401 Unauthorized si el token es inválido o ausente
+  - Extrae y valida el token desde el header Authorization
+  - Retorna 401 Unauthorized si el token es inválido o ausente
 
 2. ❌ ErrorHandlingMiddleware
-Captura todas las excepciones no controladas
+- Captura todas las excepciones no controladas
 
-Devuelve una respuesta JSON estándar:
-
-json
-Copiar
-Editar
-{ "error": "Internal server error." }
+- Devuelve una respuesta JSON estándar:
+    ```
+    { "error": "Internal server error." }
+    ```
+    
 3. 📝 RequestResponseLoggingMiddleware
-Registra método HTTP, ruta solicitada y código de estado de la respuesta
-
-Útil para trazabilidad y auditoría
+- Registra método HTTP, ruta solicitada y código de estado de la respuesta
+- Útil para trazabilidad y auditoría
 
