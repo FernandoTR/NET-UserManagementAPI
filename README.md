@@ -35,9 +35,8 @@ Esta API permite **crear**, **consultar**, **actualizar** y **eliminar** registr
 ```json
 {
   "firstName": "Fernando",
-  "lastName": "Ramírez",
-  "email": "fernando.ramirez@techhive.com",
-  "department": "TI"
+  "lastName": "Rivera",
+  "email": "fernando.rivera@test.com",
 }
 ```
 
@@ -74,7 +73,7 @@ UserManagementAPI/
     ```
     { "error": "Internal server error." }
     ```
-    
+
 3. 📝 RequestResponseLoggingMiddleware
 - Registra método HTTP, ruta solicitada y código de estado de la respuesta
 - Útil para trazabilidad y auditoría
