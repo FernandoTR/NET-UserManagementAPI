@@ -39,7 +39,7 @@ Esta API permite **crear**, **consultar**, **actualizar** y **eliminar** registr
   "email": "fernando.ramirez@techhive.com",
   "department": "TI"
 }
-
+```
 ## 📁 Estructura del Proyecto
 UserManagementAPI/
 │
@@ -59,19 +59,22 @@ UserManagementAPI/
 
 
 ## 🧱 Middleware Implementado
+1. 🔐 TokenAuthenticationMiddleware
+Extrae y valida el token desde el header Authorization
 
-### 1. 🔐 TokenAuthenticationMiddleware
-- Extrae y valida el token desde el header `Authorization`.
-- Retorna **401 Unauthorized** si el token es inválido o ausente.
+Retorna 401 Unauthorized si el token es inválido o ausente
 
-### 2. ❌ ErrorHandlingMiddleware
-- Captura todas las excepciones no controladas.
-- Devuelve una respuesta JSON estándar:
-    ```json
-    { "error": "Internal server error." }
-    ```
+2. ❌ ErrorHandlingMiddleware
+Captura todas las excepciones no controladas
 
-### 3. 📝 RequestResponseLoggingMiddleware
-- Registra método HTTP, ruta solicitada y código de estado de la respuesta.
-- Útil para trazabilidad y auditoría.
+Devuelve una respuesta JSON estándar:
+
+json
+Copiar
+Editar
+{ "error": "Internal server error." }
+3. 📝 RequestResponseLoggingMiddleware
+Registra método HTTP, ruta solicitada y código de estado de la respuesta
+
+Útil para trazabilidad y auditoría
 
